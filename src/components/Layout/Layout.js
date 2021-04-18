@@ -1,34 +1,32 @@
-import {useEffect, useState} from 'react'
+import { useEffect, useState } from 'react'
 import Head from 'next/head'
-import Link from 'next/Link'
+import Link from 'next/link'
 import styles from './Layout.module.css'
 import Image from 'next/image'
 import Brightness6Rounded from '@material-ui/icons/Brightness6Rounded'
 
 const Layout = ({ children, title = 'World Ranks' }) => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState('light')
 
   useEffect(() => {
     document.documentElement.setAttribute(
-      "data-theme",
-      localStorage.getItem("theme")
-    );
-    setTheme(localStorage.getItem('theme'));
-  }, []);
+      'data-theme',
+      localStorage.getItem('theme')
+    )
+    setTheme(localStorage.getItem('theme'))
+  }, [])
 
   const switchTheme = () => {
-    if(theme === "light")
-    {
-      saveTheme("dark");
-    }
-    else {
-      saveTheme("light");
+    if (theme === 'light') {
+      saveTheme('dark')
+    } else {
+      saveTheme('light')
     }
   }
   const saveTheme = (theme) => {
-    setTheme(theme);
-    localStorage.setItem("theme", theme);
-    document.documentElement.setAttribute("data-theme", theme);
+    setTheme(theme)
+    localStorage.setItem('theme', theme)
+    document.documentElement.setAttribute('data-theme', theme)
   }
   return (
     <div className={styles.container}>

@@ -1,6 +1,6 @@
 import styles from './CountriesTable.module.css'
 import { useState } from 'react'
-import Link from 'next/Link'
+import Link from 'next/link'
 import KeyboardArrowDownRounded from '@material-ui/icons/KeyboardArrowDownRounded'
 import KeyboardArrowUpRounded from '@material-ui/icons/KeyboardArrowUpRounded'
 
